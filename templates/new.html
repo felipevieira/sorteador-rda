@@ -1,0 +1,196 @@
+<html>
+  <head>
+			<meta charset="utf-8">
+			<h1>SORTEADOR RDA</h1>
+			<h2>Novo sorteio</h2>
+
+			<style type="text/css">
+
+				html {
+					 font-family: Verdana, Helvetica, sans-serif;
+					 text-align:center;
+					 background-color: #FFFFCC
+				}
+
+				form {
+					text-align:left;
+				}
+
+				SELECT, INPUT[type="text"] {
+					width: 160px;
+					box-sizing: border-box;
+				}
+
+				SECTION {
+					margin-left: 35%;
+					padding: 14px;
+					background-color: #FFFFCC;
+					overflow: auto;mandei
+					text-align: center;
+
+				}
+
+				SECTION > DIV {
+					float: left;
+					padding: 14px;
+				}
+
+				SECTION > DIV + DIV {
+					width: 40px;
+					text-align: left;
+				}
+
+			</style>
+
+			<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js">
+			</script>
+
+			<script type="text/javascript">
+
+				$(function(){
+
+					//Funcao para adicionar convidados na lista
+					$("#addGuest").click(function () {
+						//Adiciona uma nova entrada na lista, com o texto do campo de input e o valor da lista.
+						var selectedItem = new Option(document.querySelector('#rTxt').value, document.querySelector('#rTxt').value);
+						$("#lListValues").append(selectedItem);
+						//Zera o valor do campo de texto
+						document.querySelector('#rTxt').value = "";
+					});
+
+                    $("#hideFromList").click(function () {
+						//Verifica quem esta selecionado.
+						$("#lListValues option:selected").remove();
+					});
+
+					$("#btnRightCabeca").click(function () {
+						var selectedItem = $("#lListValues option:selected");
+						$("#rListCabecasValues").append(selectedItem);
+					});
+
+					$("#btnLeftCabeca").click(function () {
+						var selectedItem = $("#rListCabecasValues option:selected");
+						$("#lListValues").append(selectedItem);
+					});
+
+					$("#btnRightAspiras").click(function () {
+						var selectedItem = $("#lListValues option:selected");
+						$("#rListAspirasValues").append(selectedItem);
+					});
+
+					$("#btnLeftAspiras").click(function () {
+						var selectedItem = $("#rListAspirasValues option:selected");
+						$("#lListValues").append(selectedItem);
+					});
+
+					$("#btnRightAnti").click(function () {
+						var selectedItem = $("#lListValues option:selected");
+						$("#rListAntiValues").append(selectedItem);
+					});
+
+					$("#btnLeftAnti").click(function () {
+						var selectedItem = $("#rListAntiValues option:selected");
+						$("#lListValues").append(selectedItem);
+					});
+
+					$("#btnRightNormal").click(function () {
+						var selectedItem = $("#lListValues option:selected");
+						$("#rListNormalValues").append(selectedItem);
+					});
+
+					$("#btnLeftNormal").click(function () {
+						var selectedItem = $("#rListNormalValues option:selected");
+						$("#lListValues").append(selectedItem);
+					});
+				});
+
+			</script>
+
+			<body>
+
+				<section class="container">
+
+					<div>
+						<select id="lListValues" size="27" multiple>
+							{% for jogador in jogadores %}
+								<option value="{{jogador.nome}}">{{jogador.nome}}</option>
+							{% endfor %}
+						</select>
+
+						<div>
+							<input type="text" id="rTxt" /> <br>
+							<input type="button" id="addGuest" value="Inserir" />
+                            <input type="button" id="hideFromList" value="Esconder" />
+						</div>
+
+					</div>
+
+					<!-- Div para os botoes !-->
+					<div>
+						<br>
+						<div>
+							<input type="button" id="btnRightCabeca" value="&gt;&gt;" />
+							<input type="button" id="btnLeftCabeca" value="&lt;&lt;" />
+						</div>
+
+						<br><br><br><br>
+
+						<div>
+							<input type="button" id="btnRightAspiras" value="&gt;&gt;" /><br>
+							<input type="button" id="btnLeftAspiras" value="&lt;&lt;" />
+						</div>
+
+						<br><br><br><br>
+
+						<div>
+							<input type="button" id="btnRightAnti" value="&gt;&gt;" /><br>
+							<input type="button" id="btnLeftAnti" value="&lt;&lt;" />
+						</div>
+
+						<br><br><br><br>
+
+						<div>
+							<input type="button" id="btnRightNormal" value="&gt;&gt;" /><br>
+							<input type="button" id="btnLeftNormal" value="&lt;&lt;" />
+						</div>
+
+					</div>
+
+					<!-- Div para a lista de selecionaveis !-->
+					<form action=[action1] method=[method1]>
+					<div>
+						Cabeças:
+						<div>
+							<select name="cabecas" id="rListCabecasValues" size="4" multiple></select>
+						</div>
+
+						<br><br>
+						Aspirantes:
+						<!-- Div Aspiras !-->
+						<div>
+							<select name="aspiras" id="rListAspirasValues" size="4" multiple></select>
+						</div>
+
+						<br><br>
+						Anti:
+						<!-- Div Anti !-->
+						<div>
+							<select name="anti" id="rListAntiValues" size="4" multiple></select>
+						</div>
+
+						<br>
+						Normais:
+						<!-- Div Normais !-->
+						<div>
+							<select name="outros" id="rListNormalValues" size="8" multiple></select>
+						</div>
+                    <input type="submit" value="Sortear" id="btnSortear">
+					</div>
+					</form>
+				</section>
+
+			</body>
+
+	</head>
+
+<html>

@@ -8,7 +8,7 @@ from sorteador.views import *
 urlpatterns = patterns('',
     # Examples:
     url(r'^$', 'sorteador.views.home', name='home'),
-    # url(r'^blog/', include('blog.urls')),
+    url(r'^new/', 'sorteador.views.new'),
 
     url(r'^admin/', include(admin.site.urls)),
 )
