@@ -21,7 +21,6 @@ defer==1.0.6
 dirspec==13.10
 dj-database-url==0.3.0
 django-autoslug==1.7.2
--e git+git@github.com:yourlabs/django-cities-light.git@66803b2dac5e6a1aee807b1480d8acfd92014b6b#egg=django_cities_light-origin/stable/3.x.x
 django-facebook==6.0.1
 django-tinymce==1.5.3
 djangorestframework==2.3.14
@@ -58,7 +57,7 @@ python-dateutil==2.4.0
 python-debian==0.1.21-nmu2ubuntu2
 pyxattr==0.5.1
 pyxdg==0.25
-redis==2.10.3
+redis==2.10.3Flask==0.10.1
 reportlab==3.0
 requests==2.2.1
 sessioninstaller==0.0.0
