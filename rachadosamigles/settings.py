@@ -93,3 +93,6 @@ TEMPLATE_DIRS = (
     os.path.join(PROJECT_PATH, '../templates'),
     os.path.join(PROJECT_PATH, '../media')
 )
+
+import dj_database_url
+DATABASES['default'] =  dj_database_url.config()
