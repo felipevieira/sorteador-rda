@@ -96,3 +96,6 @@ TEMPLATE_DIRS = (
 
 import dj_database_url
 DATABASES['default'] =  dj_database_url.config()
+# Enable Connection Pooling
+DATABASES['default']['ENGINE'] = 'django_postgrespool'
+DATABASES['default']['NAME'] = os.path.join(BASE_DIR, 'db.sqlite3')
