@@ -157,7 +157,8 @@
 					</div>
 
 					<!-- Div para a lista de selecionaveis !-->
-					<form action=[action1] method=[method1]>
+					<form action='/sortear/' method="POST">
+					{% csrf_token %}
 					<div>
 						Cabeças:
 						<div>

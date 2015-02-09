@@ -1,1 +1,78 @@
-<a href="/new/">Novo Sorteio</a>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:fb="http://ogp.me/ns/fb#"
+	  prefix="og: http://ogp.me/ns#">
+  <head>
+
+    <style>
+          html {
+            font-family: Verdana, Helvetica, sans-serif;
+            text-align:center;
+            background-color: #6495ED
+          }
+          table {
+            text-align:center;
+          }
+          table.black {
+            border: 0px
+          }
+          td {
+            width:180px
+          }
+    </style>
+
+	<meta property="og:title" content="RdA - Racha dos Amigles 2014" />
+	<meta charset="utf-8">
+	<meta property="og:image" content="/media/elementos/rda_logo.png" />
+	<meta property="og:description"content="Sorteio Semanal já está; disponível. Visite a página para maiores informações." />
+	<link rel="shortcut icon" href="/images/rda_logo_favicon.ico">
+  </head>
+  <img src="{{MEDIA_URL}}itens/rda_logo.png" alt="" border=0 height=350 width=350></img>
+  <table class="black" align="center" border="2">
+    <tr>
+      <td bgcolor="white"><img src="{{MEDIA_URL}}itens/escudo_white.png" alt="" border=0 height=60 width=40></img></br><b> Treze </b>
+      <td bgcolor="green"><font color="white"><img src="{{MEDIA_URL}}itens/escudo_green.png" alt="" border=0 height=60 width=40></img></br><b> Nacional de Patos </b></font>
+      <td bgcolor="navy"><font color="white"><img src="{{MEDIA_URL}}itens/escudo_blue.png" alt="" border=0 height=60 width=40></img></br><b> Atletico de Cajazeiras </b></font>
+      <td bgcolor="red"><img src="{{MEDIA_URL}}itens/escudo_red.png" alt="" border=0 height=60 width=40></img></br><b> Campinense </b>
+    </tr>
+    <tr>
+      <td bgcolor="white"><img src="{{MEDIA_URL}}{{treze.cabeca.foto}}" alt="" border=0 height=100 width=100></img></br>{{treze.cabeca}}
+      <td bgcolor="green"><font color="white"><img src="{{MEDIA_URL}}{{nacional.cabeca.foto}}" alt="" border=0 height=100 width=100></img></br>{{nacional.cabeca}}</font>
+      <td bgcolor="navy"><font color="white"><img src="{{MEDIA_URL}}{{atletico.cabeca.foto}}" alt="" border=0 height=100 width=100></img></br>{{atletico.cabeca}}</font>
+      <td bgcolor="red"><img src="{{MEDIA_URL}}{{campinense.cabeca.foto}}" alt="" border=0 height=100 width=100></img></br>{{campinense.cabeca}}
+    </tr>
+    <tr>
+      <td bgcolor="white"><img src="{{MEDIA_URL}}{{treze.anticabeca.foto}}" alt="" border=0 height=100 width=100></img></br>{{treze.anticabeca}}
+      <td bgcolor="green"><font color="white"><img src="{{MEDIA_URL}}{{nacional.anticabeca.foto}}" alt="" border=0 height=100 width=100></img></br>{{nacional.anticabeca}}</font>
+      <td bgcolor="navy"><font color="white"><img src="{{MEDIA_URL}}{{atletico.anticabeca.foto}}" alt="" border=0 height=100 width=100></img></br>{{atletico.anticabeca}}</font>
+      <td bgcolor="red"><img src="{{MEDIA_URL}}{{campinense.anticabeca.foto}}" alt="" border=0 height=100 width=100></img></br>{{campinense.anticabeca}}
+    </tr>
+    <tr>
+      <td bgcolor="white"><img src="{{MEDIA_URL}}{{treze.aspira.foto}}" alt="" border=0 height=100 width=100></img></br>{{treze.aspira}}
+      <td bgcolor="green"><font color="white"><img src="{{MEDIA_URL}}{{nacional.aspira.foto}}" alt="" border=0 height=100 width=100></img></br>{{nacional.aspira}}</font>
+      <td bgcolor="navy"><font color="white"><img src="{{MEDIA_URL}}{{atletico.aspira.foto}}" alt="" border=0 height=100 width=100></img></br>{{atletico.aspira}}</font>
+      <td bgcolor="red"><img src="{{MEDIA_URL}}{{campinense.aspira.foto}}" alt="" border=0 height=100 width=100></img></br>{{campinense.aspira}}
+    </tr>
+    <tr>
+      <td bgcolor="white"><img src="{{MEDIA_URL}}{{treze.normais.all.0.foto}}" alt="" border=0 height=100 width=100></img></br>{{treze.normais.all.0}}
+      <td bgcolor="green"><font color="white"><img src="{{MEDIA_URL}}{{nacional.normais.all.0.foto}}" alt="" border=0 height=100 width=100></img></br>{{nacional.normais.all.0}}</font>
+      <td bgcolor="navy"><font color="white"><img  src="{{MEDIA_URL}}{{atletico.normais.all.0.foto}}" alt="" border=0 height=100 width=100></img></br>{{atletico.normais.all.0}}</font>
+      <td bgcolor="red"><img src="{{MEDIA_URL}}{{campinense.normais.all.0.foto}}" alt="" border=0 height=100 width=100></img></br>{{campinense.normais.all.0}}
+    </tr>
+    <tr>
+      <td bgcolor="white"><img src="{{MEDIA_URL}}{{treze.normais.all.1.foto}}" alt="" border=0 height=100 width=100></img></br>{{treze.normais.all.1}}
+      <td bgcolor="green"><font color="white"><img src="{{MEDIA_URL}}{{nacional.normais.all.1.foto}}" alt="" border=0 height=100 width=100></img></br>{{nacional.normais.all.1}}</font>
+      <td bgcolor="navy"><font color="white"><img src="{{MEDIA_URL}}{{atletico.normais.all.1.foto}}" alt="" border=0 height=100 width=100></img></br>{{atletico.normais.all.1}}</font>
+      <td bgcolor="red"><img src="{{MEDIA_URL}}{{campinense.normais.all.1.foto}}" alt="" border=0 height=100 width=100></img></br>{{campinense.normais.all.1}}
+    </tr>
+  </table>
+  <br>
+
+  {% if user.is_superuser %}
+    <form action="/new/">
+    <input type="submit" value="Novo Sorteio">
+    </form>
+  {% endif %}
+
+  <h2>Último sorteio realizado</h2>
+  <h4>Data: {{data_criacao}} </h4>
+</html>

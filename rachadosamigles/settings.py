@@ -89,5 +89,5 @@ MEDIA_URL = '/media/'
 
 TEMPLATE_DIRS = (
     os.path.join(PROJECT_PATH, '../templates'),
+    os.path.join(PROJECT_PATH, '../media')
 )
-
