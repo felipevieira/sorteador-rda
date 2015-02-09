@@ -13,14 +13,14 @@ import random
 
 def home(request, *args):
 	data = {}
-	sorteio = Sorteio.objects.order_by('-pk')[0]
-	data["campinense"] = sorteio.equipes.filter(nome="Campinense")[0]
-	data["treze"] = sorteio.equipes.filter(nome="Treze")[0]
-	data["atletico"] = sorteio.equipes.filter(nome="Atletico de Cajazeiras")[0]
-	data["nacional"] = sorteio.equipes.filter(nome="Nacional de Patos")[0]
+	#sorteio = Sorteio.objects.order_by('-pk')[0]
+	#data["campinense"] = sorteio.equipes.filter(nome="Campinense")[0]
+	#data["treze"] = sorteio.equipes.filter(nome="Treze")[0]
+	#data["atletico"] = sorteio.equipes.filter(nome="Atletico de Cajazeiras")[0]
+	#data["nacional"] = sorteio.equipes.filter(nome="Nacional de Patos")[0]
 
-	date = sorteio.data_criacao - datetime.timedelta(hours=3)
-	data["data_criacao"] = date.strftime("%d/%m/%y - %H:%M")
+	#date = sorteio.data_criacao - datetime.timedelta(hours=3)
+	#data["data_criacao"] = date.strftime("%d/%m/%y - %H:%M")
 
 	return render_to_response('index.html', data, context_instance=RequestContext(request))
 
