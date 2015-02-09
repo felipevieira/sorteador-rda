@@ -1,5 +1,4 @@
 gunicorn==19.2.1
 Django==1.6.5
 Pillow
-dj-database-url
 
